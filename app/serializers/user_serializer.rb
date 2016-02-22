@@ -10,7 +10,7 @@ class UserSerializer < ApiSerializer
   end
 
   def __token
-    api_key = current_user.api_keys.first
+    api_key = scope.api_keys.first
     api_key ? api_key.access_token : nil
   end
 end
